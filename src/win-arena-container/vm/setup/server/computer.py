@@ -378,11 +378,12 @@ def main():
     # fake rectangles
     rects = [[0, 0, 100, 100], [200, 20, 400, 60]]
 
-    computer = Computer(rects, window_rect, screenshot_img, scale=(1.0, 1.0), swap_ctrl_alt=True) 
+    computer = Computer()
+    computer.update(rects, window_rect, screenshot_img, scale=(1.0, 1.0), swap_ctrl_alt=True) 
 
     computer.os.open_program("msedge")
 
-    computer.mouse.move(id=1) 
+    computer.mouse.move_id(id=1) 
 
     time.sleep(2)
     computer.mouse.move_abs(0.5, 0.5)
@@ -394,7 +395,7 @@ def main():
     computer.mouse.scroll(dir="up")
     # computer.mouse.right_click()
 
-    computer.mouse.click()  
+    computer.mouse.single_click()  
     computer.keyboard.write("amazon.com")  
     computer.keyboard.press("enter")
 
